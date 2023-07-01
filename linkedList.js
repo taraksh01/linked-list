@@ -1,7 +1,5 @@
 const LinkedList = () => {
-  let listHead = Node(4);
-  listHead.nextNode = Node(425);
-  listHead.nextNode.nextNode = Node(29);
+  let listHead = null;
 
   const append = (value) => {
     temp = Node(value);
@@ -37,7 +35,7 @@ const LinkedList = () => {
   };
 
   const head = () => {
-    return listHead.value;
+    return listHead ? listHead.value : null;
   };
 
   const tail = () => {};
