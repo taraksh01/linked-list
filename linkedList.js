@@ -46,7 +46,19 @@ const LinkedList = () => {
     return currentNode ? currentNode : null;
   };
 
-  const at = (index) => {};
+  const at = (index) => {
+    currentNode = listHead;
+    temp = 0;
+    while (currentNode !== null) {
+      if (temp < index) {
+        currentNode = currentNode.nextNode;
+        temp += 1;
+        continue;
+      }
+      return currentNode.value;
+    }
+    return null;
+  };
 
   const pop = () => {
     // remove last element
@@ -101,7 +113,8 @@ const Node = (v) => {
 
 const ll = LinkedList();
 
-// ll.append(5);
-// ll.prepend(28);
-console.log(ll.tail());
+ll.append(5);
+ll.prepend(28);
+console.log(ll.at(2));
+console.log(ll.at(0));
 console.log(ll.toString());
