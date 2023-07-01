@@ -16,7 +16,15 @@ const LinkedList = () => {
     currentNode.nextNode = temp;
   };
 
-  const prepend = (value) => {};
+  const prepend = (value) => {
+    temp = Node(value);
+    if (listHead === null) {
+      listHead = temp;
+      return;
+    }
+    temp.nextNode = listHead;
+    listHead = temp;
+  };
 
   const size = () => {};
 
@@ -80,4 +88,6 @@ const Node = (v) => {
 const ll = LinkedList();
 
 ll.append(5);
+
+ll.prepend(28);
 console.log(ll.toString());
