@@ -3,7 +3,18 @@ const LinkedList = () => {
   listHead.nextNode = Node(425);
   listHead.nextNode.nextNode = Node(29);
 
-  const append = (value) => {};
+  const append = (value) => {
+    temp = Node(value);
+    if (listHead === null) {
+      listHead = temp;
+      return;
+    }
+    currentNode = listHead;
+    while (currentNode.nextNode !== null) {
+      currentNode = currentNode.nextNode;
+    }
+    currentNode.nextNode = temp;
+  };
 
   const prepend = (value) => {};
 
@@ -67,4 +78,6 @@ const Node = (v) => {
 };
 
 const ll = LinkedList();
+
+ll.append(5);
 console.log(ll.toString());
