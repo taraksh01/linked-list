@@ -74,7 +74,16 @@ const LinkedList = () => {
   };
 
   const find = (value) => {
-    // return index of the node
+    currentNode = listHead;
+    temp = -1;
+    while (currentNode !== null) {
+      temp += 1;
+      if (currentNode.value === value) {
+        return temp;
+      }
+      currentNode = currentNode.nextNode;
+    }
+    return null;
   };
 
   const toString = () => {
@@ -120,5 +129,5 @@ const ll = LinkedList();
 
 ll.append(5);
 ll.prepend(28);
-console.log(ll.contains(59));
+console.log(ll.find(28));
 console.log(ll.toString());
