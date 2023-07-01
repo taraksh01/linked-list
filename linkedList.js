@@ -1,4 +1,8 @@
 const LinkedList = () => {
+  let listHead = Node(4);
+  listHead.nextNode = Node(425);
+  listHead.nextNode.nextNode = Node(29);
+
   const append = (value) => {};
 
   const prepend = (value) => {};
@@ -25,6 +29,14 @@ const LinkedList = () => {
 
   const toString = () => {
     // return linked list as string
+    temp = listHead;
+    strList = ``;
+    while (temp !== null) {
+      strList += `${temp.value} -> `;
+      temp = temp.nextNode;
+    }
+    strList += `null`;
+    return strList;
   };
 
   const insertAt = (value, index) => {};
@@ -47,7 +59,12 @@ const LinkedList = () => {
   };
 };
 
-const Node = (value) => {
-  value = value || null;
-  nextNode = null;
+const Node = (v) => {
+  const value = v || null;
+  const nextNode = null;
+
+  return { value, nextNode };
 };
+
+const ll = LinkedList();
+console.log(ll.toString());
