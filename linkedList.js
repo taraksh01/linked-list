@@ -36,7 +36,9 @@ const LinkedList = () => {
     return temp;
   };
 
-  const head = () => {};
+  const head = () => {
+    return listHead.value;
+  };
 
   const tail = () => {};
 
@@ -100,3 +102,4 @@ console.log(ll.size());
 ll.prepend(28);
 console.log(ll.toString());
 console.log(ll.size());
+console.log(ll.head());
