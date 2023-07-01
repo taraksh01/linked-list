@@ -60,12 +60,17 @@ const LinkedList = () => {
     return null;
   };
 
-  const pop = () => {
-    // remove last element
-  };
+  const pop = () => {};
 
   const contains = (value) => {
-    // return true if value is present
+    currentNode = listHead;
+    while (currentNode !== null) {
+      if (currentNode.value === value) {
+        return true;
+      }
+      currentNode = currentNode.nextNode;
+    }
+    return false;
   };
 
   const find = (value) => {
@@ -115,6 +120,5 @@ const ll = LinkedList();
 
 ll.append(5);
 ll.prepend(28);
-console.log(ll.at(2));
-console.log(ll.at(0));
+console.log(ll.contains(59));
 console.log(ll.toString());
